@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.repackaged.org.json.JSONObject;
+
 
 @SuppressWarnings("serial")
 public class TrimServlet extends HttpServlet {
@@ -31,7 +31,8 @@ public class TrimServlet extends HttpServlet {
 			PrintWriter out = resp.getWriter();
 
 			String userUrl = req.getParameter("url");
-			JSONObject jsonObject = new JSONObject();
+			com.google.appengine.repackaged.com.google.gson.JsonObject jsonObject 
+			= new com.google.appengine.repackaged.com.google.gson.JsonObject();
 			if (userUrl != null && !"".equals(userUrl)) {
 
 				String[] removeProtocol = {"http://", "https://", "ftp://"};
@@ -62,7 +63,7 @@ public class TrimServlet extends HttpServlet {
 					line = rd.readLine();
 				}
 				log.info("Final URL:" + line);
-				jsonObject.put("url", line);
+				//jsonObject.add("url", line);
 			}
 			out.print(jsonObject);
 			out.flush();

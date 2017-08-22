@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 			"<input name=\"donuts\" id=\"donuts\" type=\"text\" size=\"4\" />" +
 			" <input name=\"olddonuts\"  type=\"hidden\" value=\"" + donuts + "\" /> " +
 			" <input name=\"userId\"  type=\"hidden\" value=\"" +user.getEmail()+ "\" /> " +
-			"   <input type=\"submit\" value=\"  ADD  \" /><br><br><input type=\"submit\"  name =\"deleteBtn\" value=\"DELETE ME\" />" +
+			"   <input type=\"submit\" value=\"  Add  \" /><br><br><input type=\"submit\"  name =\"deleteBtn\" value=\"Delete my Record\" />" +
 			"</form>";
 			
 		}
@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 		else
 			out.println("<p> No donuts you have :( </p>");
 		out.println(form);
-		out.print("<br><b>Note:</b> Your Email ID will be saved, if you add donuts. You can delete your record.<br><br>");
+		out.print("<br><b>Note:</b> Your Email ID will be saved, if you add donuts. You can delete your record by pressing <b>Delete my Record</b>.<br><br>");
 		out.print("<img src='http://code.google.com/appengine/images/appengine-noborder-120x30.gif' alt='Powered by Google App Engine' /></center></body></html>");
 	}
 }
